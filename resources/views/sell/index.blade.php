@@ -14,14 +14,15 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-8" align="center">
-                <form>
+                <form action="{{ url('/sell/add-product') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="shoesname">Schuhname</label>
-                        <input type="text" class="form-control" id="shoesname" placeholder="Yeezy boost 350 v2 beluga">
+                        <input type="text" name="shoesname" class="form-control" id="shoesname" placeholder="Yeezy boost 350 v2 beluga" required>
                     </div>
                     <div class="form-group">
                         <label for="shoesquality">Qualität</label>
-                        <select class="form-control" id="shoesquality">
+                        <select class="form-control" name="shoesquality" id="shoesquality" required>
                         <option>Neu</option>
                         <option>Leicht gebraucht</option>
                         <option>Stark gebraucht</option>
@@ -29,19 +30,19 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="shoesquality">Schuhkarton vorhanden</label>
-                        <select class="form-control" id="shoesquality">
+                        <label for="shoescardboard">Schuhkarton vorhanden</label>
+                        <select class="form-control" name="shoescardboard" id="shoescardboard" required>
                         <option>Ja</option>
                         <option>Nein</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="shoesprice">Erwünschter Preis (Franken)</label>
-                        <input type="number" min="50" class="form-control" id="shoesprice" value="100" step="1">
+                        <input type="number" min="50" class="form-control" name="shoesprice" id="shoesprice" value="100" step="1" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Example file input</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <label for="shoesimage">Example file input</label>
+                        <input type="file" class="form-control-file" name="shoesimage" id="shoesimage" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Anfrage stellen</button>
                 </form>

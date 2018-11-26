@@ -13,6 +13,7 @@ class ProductTableSeeder extends Seeder
     {
         $product = new \App\Product([
             'name' => 'Yeezy season 1 Turtle Dove',
+            'seller_id' => 1,
             'quality' => 'Neu',
             'cardboard' => false,
             'price' => 210,
@@ -22,6 +23,7 @@ class ProductTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Yeezy boost season 1 Pirate Black',
+            'seller_id' => 1,
             'quality' => 'Leicht gebraucht',
             'cardboard' => true,
             'price' => 140,
@@ -31,6 +33,7 @@ class ProductTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Nike Air Max 1',
+            'seller_id' => 1,
             'quality' => 'Neu',
             'cardboard' => true,
             'price' => 510,
@@ -40,6 +43,7 @@ class ProductTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Yeezy season 1 Turtle Dove',
+            'seller_id' => 1,
             'quality' => 'Defekt',
             'cardboard' => true,
             'price' => 300,

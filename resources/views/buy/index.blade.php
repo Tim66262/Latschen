@@ -24,7 +24,7 @@
                         <img class="card-img-top" src="{{ $product->imagePath }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
-                            <p class="card-text">{{ $product->price }}.- | Verkaüfer</p>
+                            <p class="card-text">{{ $product->price }}.- | {{ $product->users->name }}</p>
                             @if($product->cardboard != 0)
                                 <p class="card-text">{{ $product->quality }} | Mit Verpackug</p>
                             @else

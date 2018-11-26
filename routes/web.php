@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sell', 'SellController@index')->name('sell');
+Route::post('/sell/add-product', 'SellController@addProduct');
 Route::get('/buy', 'BuyController@index')->name('buy');
 Route::get('/buy/cart', 'BuyController@cart')->name('cart');
 Route::get('/buy/add-to-cart/{id}', 'BuyController@addToCart')->name('addToCart');
