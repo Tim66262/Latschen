@@ -28,12 +28,12 @@
                             @if($product->cardboard != 0)
                                 <p class="card-text">{{ $product->quality }} | Mit Verpackug</p>
                             @else
-                            <p class="card-text">{{ $product->quality }} | Ohne Verpackung</p>
+                                <p class="card-text">{{ $product->quality }} | Ohne Verpackung</p>
                             @endif
-                            @if(!in_array($product, $cart->items))
+                            @if(!isset($cart->items[$product->id]))
                                 <a href="{{ route('addToCart', ['id' => $product->id]) }}" class="btn btn-primary">Zum Warenkorb hinzufügen</a>
                             @else
-                                <a href="{{ route('addToCart', ['id' => $product->id]) }}" class="btn btn-danger disabled">Schon im Warenkorb</a>
+                                <a href="#" class="btn btn-danger disabled">Schon im Warenkorb</a>
                             @endif
                         </div>
                     </div>

@@ -14,7 +14,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-8" align="center">
-                <form action="{{ url('/sell/add-product') }}" method="POST">
+                <form action="{{ url('/sell/add-product') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="shoesname">Schuhname</label>
@@ -41,10 +41,10 @@
                         <input type="number" min="50" class="form-control" name="shoesprice" id="shoesprice" value="100" step="1" required>
                     </div>
                     <div class="form-group">
-                        <label for="shoesimage">Example file input</label>
-                        <input type="file" class="form-control-file" name="shoesimage" id="shoesimage" required>
+                        <label for="imgUpload1">File input</label>
+                        <input type="file" class="form-control-file" id="imgUpload1" name="imgUpload1" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Anfrage stellen</button>
+                    <button type="submit" class="btn btn-primary btnSubmit">Anfrage stellen</button>
                 </form>
             </div>
         </div>
@@ -53,5 +53,7 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+
+        $("#btnSubmit").attr("disabled", true);
     </script>
 @endsection

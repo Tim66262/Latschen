@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
+use helpers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SellController extends Controller
 {
@@ -29,19 +32,21 @@ class SellController extends Controller
 
 
     public function addProduct(Request $request) 
-    {
+    { 
         //Mayby make this stuff dynamic
         if(count($request->all()) == 6){
+            $path=$request->file('imgUpload1')->store('public');
             $product = new \App\Product([
                 'name' => $request->get('shoesname'),
                 'seller_id' => Auth::user()->id,
                 'quality' => $request->get('shoesquality'),
                 'cardboard' => $request->get('shoescardboard') == 'Ja' ? 1 : 0,
                 'price' => $request->get('shoesprice'),
-                'imagePath' => $request->get('shoesimage'),
+                'imagePath' => Storage::url($path)
             ]);
             $product->save();
         }
+        helpers::addProductRequest($product);
         return redirect()->route('buy');
     }
 }
